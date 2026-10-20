@@ -1,0 +1,72 @@
+% !TEX program = lualatex
+
+\documentclass[a4paper,12pt]{article}
+\usepackage{fancyhdr}
+\usepackage[top=0.7in,bottom=0.6in,left=0.3in,right=0.3in,headheight=15pt]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+    citecolor=black
+}
+% ---- Formatting helpers ----
+% \needbold: key terms that are NOT yet bolded in the original notes, marked in red bold.
+% Once you accept the marks, redefine the command as:
+%   \renewcommand{\needbold}[1]{\textbf{#1}}
+\newcommand{\needbold}[1]{\textcolor{red!70!black}{\textbf{#1}}}
+
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{gensymb}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{textcomp}
+\usepackage{luatexja-fontspec}
+\usepackage{xcolor}
+\usepackage{bookmark}
+\usepackage{amsmath,amssymb,amsfonts, mathrsfs}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{babel}
+\usepackage{makecell}
+\usepackage{longtable}
+\hbadness=10000
+\hfuzz=2.5pt
+\emergencystretch=3em
+% \setmainfont{DengXian}[
+%     BoldFont = DengXian Bold,
+%     ItalicFont = DengXian Light,
+%     BoldItalicFont = DengXian Bold
+% ]
+\setmainjfont{DengXian}[
+    BoldFont = DengXian Bold,
+    ItalicFont = DengXian Light,
+    BoldItalicFont = DengXian Bold
+]
+\setsansjfont{DengXian}
+\setmonofont{DengXian}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}  % ragged right inside X
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+\pgfplotsset{width=10cm, compat=1.18}
+\usetikzlibrary{datavisualization,shapes.arrows}
+\usetikzlibrary{patterns,calc, positioning,arrows.meta, angles, quotes, 3d, shapes.misc}
+\usetikzlibrary{datavisualization.formats.functions,shadings}
+\usetikzlibrary{shapes.symbols,arrows.meta,decorations.pathmorphing,decorations.markings,babel}
+\singlespacing
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\leftmark}
+% \renewcommand{\arraystretch}{2}
+\renewcommand{\footrulewidth}{0.6pt}
+\rfoot{\thepage}
+\lfoot{\rightmark}
+\title{\textbf{IB Econ SL/HL Notes}}
+\author{Kenny Lin / BusyPizza}
